@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warframe Orokin Map</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div id="loader-overlay">
+    <div id="loader"></div>
+  </div>
+
+  <div id="map"></div>
+
+ <!-- Button container for toggling theme and markers -->
+  <div id="button-container">
+    <button id="theme-toggle">Toggle Night/Day Theme</button>
+    <button id="toggle-markers">Toggle Markers</button>
+  </div>
+  
+  <script src="javascript/Script.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp7c5SJAY3f3cYv_z8X7ByMKA6JtCNCEU&callback=initMap">
+  </script>
+
+</body>
+</html>

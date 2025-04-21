@@ -1,0 +1,115 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Orokin-style loading spinner */
+#loader {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #f4f4f4;
+    border-top: 8px solid #c4a300;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+    z-index: 1000;
+}
+
+#loader-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Orokin Control Panel */
+#control-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid #c4a300;
+    border-radius: 12px;
+    padding: 12px 18px;
+    box-shadow: 0 0 10px #c4a30080;
+    z-index: 1001;
+}
+
+#control-panel h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #c4a300;
+    text-align: center;
+}
+
+.orokin-btn {
+    background-color: #fff;
+    border: 2px solid #c4a300;
+    color: #c4a300;
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.orokin-btn:hover {
+    background-color: #c4a300;
+    color: #fff;
+    box-shadow: 0 0 10px #c4a300aa;
+}
+
+/* Button Container to Center Buttons */
+#button-container {
+    position: absolute;
+    top: 10px; /* Align at the very top */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 9999;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+button {
+    background-color: #c4a300; /* Orokin gold */
+    color: white;
+    border: none;
+    padding: 8px 15px; /* Smaller padding */
+    font-size: 14px; /* Smaller font size */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: auto; /* Let the button size adjust to its content */
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #ffd700; /* Lighter gold */
+}
+
+/* Hover effects */
+#theme-toggle:hover {
+    background-color: #ffd700; /* Lighter gold */
+}
+
+#toggle-markers:hover {
+    background-color: #ffd700; /* Lighter gold */
+}
