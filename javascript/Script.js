@@ -49,11 +49,11 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), options);
 
   const locations = [
-    { lat: 51.5074, lng: -0.1278, title: 'Big Ben', icon: 'path/to/warframe-excalibur.png' },
-    { lat: 51.5007, lng: -0.1246, title: 'London Eye', icon: 'path/to/warframe-volt.png' },
-    { lat: 51.5194, lng: -0.1270, title: 'British Museum', icon: 'path/to/warframe-mag.png' },
-    { lat: 51.5033, lng: -0.1196, title: 'Tower Bridge', icon: 'path/to/warframe-rhino.png' },
-    { lat: 51.5014, lng: -0.1419, title: 'Buckingham Palace', icon: 'path/to/warframe-loki.png' }
+    { lat: 51.5074, lng: -0.1278, title: 'Big Ben', icon: 'assets/icons/Excalibur Umbra.png' },
+    { lat: 51.5007, lng: -0.1246, title: 'London Eye', icon: 'assets/icons/Dagath.png' },
+    { lat: 51.5194, lng: -0.1270, title: 'British Museum', icon: 'assets/icons/Voruna.png' },
+    { lat: 51.5033, lng: -0.1196, title: 'Tower Bridge', icon: 'assets/icons/Citrine.png' },
+    { lat: 51.5014, lng: -0.1419, title: 'Buckingham Palace', icon: 'assets/icons/Styanax.png' }
   ];
 
   locations.forEach(location => {
