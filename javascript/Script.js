@@ -49,12 +49,12 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), options);
 
   const locations = [
-    { lat: 51.5074, lng: -0.1278, title: 'Big Ben', icon: 'Excalibur Umbra.png' },
-    { lat: 51.5007, lng: -0.1246, title: 'London Eye', icon: 'Dagath.png' },
-    { lat: 51.5194, lng: -0.1270, title: 'British Museum', icon: 'Voruna.png' },
-    { lat: 51.5033, lng: -0.1196, title: 'Tower Bridge', icon: 'Citrine.png' },
-    { lat: 51.5014, lng: -0.1419, title: 'Buckingham Palace', icon: 'Styanax.png' }
-  ];
+    { lat: 51.5074, lng: -0.1278, title: 'Big Ben', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Excalibur%20Umbra.png' },
+    { lat: 51.5007, lng: -0.1246, title: 'London Eye', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Dagath.png' },
+    { lat: 51.5194, lng: -0.1270, title: 'British Museum', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Voruna.png' },
+    { lat: 51.5033, lng: -0.1196, title: 'Tower Bridge', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Citrine.png' },
+    { lat: 51.5014, lng: -0.1419, title: 'Buckingham Palace', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Styanax.png' }
+  ];  
 
   locations.forEach(location => {
     const marker = new google.maps.Marker({
