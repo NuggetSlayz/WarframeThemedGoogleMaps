@@ -4,6 +4,9 @@ html, body {
     padding: 0;
     background: #ffffff;
     font-family: 'Segoe UI', sans-serif;
+
+    /* Add custom Warframe-style cursor */
+    cursor: url('https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/cursor/SilvervaleGlyph.png') 16 16, auto;
 }
 
 #map {

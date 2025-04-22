@@ -63,7 +63,9 @@ function initMap() {
       title: location.title,
       icon: {
         url: location.icon,
-        scaledSize: new google.maps.Size(40, 40)
+        scaledSize: new google.maps.Size(50, 50), // Updated size for better visibility
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(25, 25) // Center the icon on the marker
       }
     });
     markers.push(marker);
