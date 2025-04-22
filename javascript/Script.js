@@ -46,8 +46,10 @@ function initMapInternal() {
     styles: currentStyle
   };
 
+  // Initialize the map
   map = new google.maps.Map(document.getElementById('map'), options);
 
+  // Define marker locations
   const locations = [
     { lat: 51.5074, lng: -0.1278, title: 'Big Ben', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Excalibur%20Umbra.png' },
     { lat: 51.5007, lng: -0.1246, title: 'London Eye', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Dagath.png' },
@@ -56,6 +58,7 @@ function initMapInternal() {
     { lat: 51.5014, lng: -0.1419, title: 'Buckingham Palace', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Styanax.png' }
   ];
 
+  // Create and place markers on the map
   locations.forEach(location => {
     const marker = new google.maps.Marker({
       position: { lat: location.lat, lng: location.lng },
@@ -63,7 +66,7 @@ function initMapInternal() {
       title: location.title,
       icon: {
         url: location.icon,
-        scaledSize: new google.maps.Size(50, 50),
+        scaledSize: new google.maps.Size(50, 50), // Scale marker icons
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(25, 25) // Center the icon on the marker
       }
@@ -82,7 +85,7 @@ function initMapInternal() {
 document.getElementById('toggle-markers').addEventListener('click', () => {
   markersVisible = !markersVisible;
   markers.forEach(marker => {
-    marker.setMap(markersVisible ? map : null);
+    marker.setMap(markersVisible ? map : null); // Toggle marker visibility
   });
 });
 
