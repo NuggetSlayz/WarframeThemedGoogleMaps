@@ -12,6 +12,7 @@ html, body {
 #map {
     height: 100%;
     width: 100%;
+    cursor: url('https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/cursor/SilvervaleGlyph.png'), auto;
 }
 
 /* Orokin-style loading spinner */
