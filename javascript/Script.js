@@ -4,42 +4,42 @@ let markersVisible = true; // Track if markers are visible
 
 // Define the Orokin Light and Void Night styles
 const orokinLightStyle = [
-    { "elementType": "geometry", "stylers": [{ "color": "#ffffff" }] },
-    { "elementType": "labels.text.fill", "stylers": [{ "color": "#c4a300" }] },
-    { "elementType": "labels.text.stroke", "stylers": [{ "color": "#f4f4f4" }] },
-    { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#f3f3f3" }] },
-    { "featureType": "poi", "elementType": "labels", "stylers": [{ "visibility": "simplified" }] },
-    { "featureType": "road", "stylers": [{ "color": "#dddddd" }] },
-    { "featureType": "water", "stylers": [{ "color": "#d9e4f4" }] },
-    { "featureType": "transit", "stylers": [{ "visibility": "off" }] }
+  { "elementType": "geometry", "stylers": [{ "color": "#ffffff" }] },
+  { "elementType": "labels.text.fill", "stylers": [{ "color": "#c4a300" }] },
+  { "elementType": "labels.text.stroke", "stylers": [{ "color": "#f4f4f4" }] },
+  { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#f3f3f3" }] },
+  { "featureType": "poi", "elementType": "labels", "stylers": [{ "visibility": "simplified" }] },
+  { "featureType": "road", "stylers": [{ "color": "#dddddd" }] },
+  { "featureType": "water", "stylers": [{ "color": "#d9e4f4" }] },
+  { "featureType": "transit", "stylers": [{ "visibility": "off" }] }
 ];
 
 const voidNightStyle = [
-    { "elementType": "geometry", "stylers": [{ "color": "#000000" }] },
-    { "elementType": "labels.text.fill", "stylers": [{ "color": "#c4a300" }] },
-    { "elementType": "labels.text.stroke", "stylers": [{ "color": "#3e3e3e" }] },
-    { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#3c3c3c" }] },
-    { "featureType": "poi", "elementType": "labels", "stylers": [{ "visibility": "simplified" }] },
-    { "featureType": "road", "stylers": [{ "color": "#3e3e3e" }] },
-    { "featureType": "water", "stylers": [{ "color": "#1e1e1e" }] },
-    { "featureType": "transit", "stylers": [{ "visibility": "off" }] }
+  { "elementType": "geometry", "stylers": [{ "color": "#000000" }] },
+  { "elementType": "labels.text.fill", "stylers": [{ "color": "#c4a300" }] },
+  { "elementType": "labels.text.stroke", "stylers": [{ "color": "#3e3e3e" }] },
+  { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#3c3c3c" }] },
+  { "featureType": "poi", "elementType": "labels", "stylers": [{ "visibility": "simplified" }] },
+  { "featureType": "road", "stylers": [{ "color": "#3e3e3e" }] },
+  { "featureType": "water", "stylers": [{ "color": "#1e1e1e" }] },
+  { "featureType": "transit", "stylers": [{ "visibility": "off" }] }
 ];
 
 // Add a toggle function to switch between day/night modes
 let currentStyle = orokinLightStyle;
 
 document.getElementById('theme-toggle').addEventListener('click', () => {
-    if (currentStyle === orokinLightStyle) {
-        map.setOptions({ styles: voidNightStyle });
-        currentStyle = voidNightStyle;
-    } else {
-        map.setOptions({ styles: orokinLightStyle });
-        currentStyle = orokinLightStyle;
-    }
+  if (currentStyle === orokinLightStyle) {
+    map.setOptions({ styles: voidNightStyle });
+    currentStyle = voidNightStyle;
+  } else {
+    map.setOptions({ styles: orokinLightStyle });
+    currentStyle = orokinLightStyle;
+  }
 });
 
 // Function to initialize the map
-function initMap() {
+function initMapInternal() {
   const options = {
     zoom: 13,
     center: { lat: 51.5074, lng: -0.1278 },
@@ -54,7 +54,7 @@ function initMap() {
     { lat: 51.5194, lng: -0.1270, title: 'British Museum', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Voruna.png' },
     { lat: 51.5033, lng: -0.1196, title: 'Tower Bridge', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Citrine.png' },
     { lat: 51.5014, lng: -0.1419, title: 'Buckingham Palace', icon: 'https://raw.githubusercontent.com/NuggetSlayz/WarframeThemedGoogleMaps/main/assets/icons/Styanax.png' }
-  ];  
+  ];
 
   locations.forEach(location => {
     const marker = new google.maps.Marker({
@@ -63,7 +63,7 @@ function initMap() {
       title: location.title,
       icon: {
         url: location.icon,
-        scaledSize: new google.maps.Size(50, 50), // Updated size for better visibility
+        scaledSize: new google.maps.Size(50, 50),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(25, 25) // Center the icon on the marker
       }
@@ -86,5 +86,5 @@ document.getElementById('toggle-markers').addEventListener('click', () => {
   });
 });
 
-// Ensure initMap is globally accessible
-window.initMap = initMap;
+// Ensure map init function is globally accessible
+window.initMapInternal = initMapInternal;

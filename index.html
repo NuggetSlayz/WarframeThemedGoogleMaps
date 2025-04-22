@@ -19,10 +19,17 @@
     <button id="toggle-markers">Toggle Markers</button>
   </div>
   
-  <script src="javascript/Script.js"></script>
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp7c5SJAY3f3cYv_z8X7ByMKA6JtCNCEU&callback=initMap">
+  <script src="/api/loadMapScript.js"></script>
+  <script>
+    window.onload = () => {
+      if (window.initMap) {
+        window.initMap();
+      } else {
+        console.error('Map script not loaded.');
+      }
+    };
   </script>
+  <script src="javascript/Script.js"></script>
 
 </body>
 </html>
